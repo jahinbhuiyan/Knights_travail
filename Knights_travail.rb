@@ -19,5 +19,15 @@ class KnightPathFinder
         end
       end
 
+      def initialize(pos)
+        unless (0...8).cover?(pos[0]) && (0...8).cover?(pos[1])
+          raise "Not a valid position"
+        end
+      
+        @root_node = PolyTreeNode.new(pos)
+        @valid_pos = []
+        @considered_pos = [pos]
+      end
+
 
 end
